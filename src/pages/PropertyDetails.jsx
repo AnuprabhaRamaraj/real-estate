@@ -7,7 +7,7 @@ import { VideoSection } from '../components/property/VideoSection';
 import { FeedbackForm } from '../components/property/FeedbackForm';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { 
-  MapPin, CheckCircle, Sparkles, MessageSquare, PhoneCall, ArrowLeft, 
+  MapPin, CheckCircle, Sparkles, PhoneCall, ArrowLeft, 
   Ruler, Layers, Building, Tag, ExternalLink, Calendar, Info, Share2 
 } from 'lucide-react';
 
@@ -113,11 +113,6 @@ export function PropertyDetails() {
     }
   };
 
-  // Section 20 requirement: WhatsApp message template
-  const whatsappPhone = (settings?.whatsapp_number || '+919876543210').replace(/[^0-9]/g, '');
-  const whatsappMessage = encodeURIComponent(`Hello, I am interested in ${property_name}. Please provide more details.`);
-  const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${whatsappMessage}`;
-
   return (
     <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
@@ -184,13 +179,11 @@ export function PropertyDetails() {
 
             <div className="mt-2 lg:mt-3 flex items-center space-x-2">
               <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition-all active:scale-95"
+                href={`tel:${settings?.phone_number || '+919876543210'}`}
+                className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-slate-950 font-bold text-xs shadow-gold-glow transition-all active:scale-95"
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>Enquire on WhatsApp</span>
+                <PhoneCall className="w-4 h-4" />
+                <span>Call Sales Office</span>
               </a>
             </div>
           </div>
@@ -355,28 +348,18 @@ export function PropertyDetails() {
             <div className="space-y-2">
               <h3 className="font-serif text-xl font-bold text-white">Enquire About This Property</h3>
               <p className="text-slate-400 text-xs leading-relaxed">
-                Send a message directly to our sales office or connect via WhatsApp for instant site visit arrangement.
+                Send a message directly to our sales office or call us directly for instant site visit arrangement.
               </p>
             </div>
 
-            {/* Direct Call / WhatsApp Buttons */}
-            <div className="space-y-3 pt-2">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-all active:scale-98"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>Chat on WhatsApp</span>
-              </a>
-
+            {/* Direct Call Button */}
+            <div className="pt-2">
               <a
                 href={`tel:${settings?.phone_number || '+919876543210'}`}
-                className="w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-all"
+                className="w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-slate-950 font-bold text-sm shadow-gold-glow transition-all active:scale-98"
               >
-                <PhoneCall className="w-4 h-4 text-gold-400" />
-                <span>Call Sales Office</span>
+                <PhoneCall className="w-4 h-4" />
+                <span>Call Sales Office Directly</span>
               </a>
             </div>
 

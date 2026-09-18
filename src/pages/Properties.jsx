@@ -88,7 +88,6 @@ export function Properties() {
         properties={filteredProperties}
         loading={loading}
         error={error}
-        whatsappNumber={settings?.whatsapp_number}
       />
 
     </div>

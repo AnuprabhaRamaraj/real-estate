@@ -16,12 +16,8 @@ export function Contact() {
 
   const companyName = settings?.company_name || 'Apex Estates';
   const phone = settings?.phone_number || '+91 98765 43210';
-  const whatsapp = settings?.whatsapp_number || '+91 98765 43210';
   const email = settings?.email || 'contact@apexestates.com';
   const address = settings?.address || '123 Luxury Avenue, Race Course, Coimbatore, TN 641018';
-  
-  const rawWhatsapp = whatsapp.replace(/[^0-9]/g, '');
-  const whatsappUrl = `https://wa.me/${rawWhatsapp}?text=${encodeURIComponent('Hello, I am interested in inquiring about your properties.')}`;
 
   return (
     <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -42,7 +38,7 @@ export function Contact() {
         </p>
       </div>
 
-      {/* Quick Action Buttons (Section 18 requirement) */}
+      {/* Quick Action Buttons */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
         <a
           href={`tel:${phone}`}
@@ -51,19 +47,17 @@ export function Contact() {
           <div className="w-9 h-9 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-slate-950 transition-colors">
             <PhoneCall className="w-5 h-5" />
           </div>
-          <span>Call Now</span>
+          <span>Call Sales Office</span>
         </a>
 
         <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center space-x-3 p-4 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 hover:bg-emerald-600 text-white font-bold text-sm transition-all shadow-lg group"
+          href={`mailto:${email}`}
+          className="flex items-center justify-center space-x-3 p-4 rounded-2xl bg-slate-900 border border-slate-800 hover:border-gold-500/40 text-white font-bold text-sm hover:bg-slate-800 transition-all shadow-lg group"
         >
-          <div className="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center group-hover:bg-white group-hover:text-emerald-600 transition-colors">
-            <MessageSquare className="w-5 h-5" />
+          <div className="w-9 h-9 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-slate-950 transition-colors">
+            <Mail className="w-5 h-5" />
           </div>
-          <span>WhatsApp Us</span>
+          <span>Email Us</span>
         </a>
 
         <a
@@ -71,9 +65,9 @@ export function Contact() {
           className="flex items-center justify-center space-x-3 p-4 rounded-2xl bg-slate-900 border border-slate-800 hover:border-gold-500/40 text-white font-bold text-sm hover:bg-slate-800 transition-all shadow-lg group"
         >
           <div className="w-9 h-9 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-slate-950 transition-colors">
-            <Mail className="w-5 h-5" />
+            <MessageSquare className="w-5 h-5" />
           </div>
-          <span>Send Enquiry</span>
+          <span>Submit Form</span>
         </a>
       </div>
 
@@ -150,9 +144,6 @@ export function Contact() {
                   <Youtube className="w-5 h-5" />
                 </a>
               )}
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-emerald-950 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-600 hover:text-white transition-all">
-                <MessageSquare className="w-5 h-5" />
-              </a>
             </div>
           </div>
         </div>

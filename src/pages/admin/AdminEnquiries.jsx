@@ -207,16 +207,22 @@ export function AdminEnquiries() {
 
             <div className="flex justify-end space-x-3 pt-2">
               <a
-                href={`https://wa.me/${selectedEnquiry.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hello ${selectedEnquiry.name}, regarding your enquiry for ${selectedEnquiry.property_name || 'our property'}...`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs"
+                href={`tel:${selectedEnquiry.phone}`}
+                className="px-4 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-slate-950 font-bold text-xs"
               >
-                Reply on WhatsApp
+                Call Customer
               </a>
+              {selectedEnquiry.email && (
+                <a
+                  href={`mailto:${selectedEnquiry.email}?subject=${encodeURIComponent(`Regarding your inquiry on ${selectedEnquiry.property_name || 'Property'}`)}`}
+                  className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs"
+                >
+                  Send Email
+                </a>
+              )}
               <button
                 onClick={() => setSelectedEnquiry(null)}
-                className="px-4 py-2.5 rounded-xl bg-slate-800 text-white font-semibold text-xs"
+                className="px-4 py-2.5 rounded-xl bg-slate-900 text-slate-400 hover:text-white font-semibold text-xs border border-slate-800"
               >
                 Close
               </button>

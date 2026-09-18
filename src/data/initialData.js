@@ -116,7 +116,6 @@ export const DEFAULT_SETTINGS = {
   company_name: 'Apex Estates',
   logo_url: '',
   phone_number: '+91 98765 43210',
-  whatsapp_number: '+91 98765 43210',
   email: 'contact@apexestates.com',
   address: '123 Luxury Avenue, Race Course, Coimbatore, Tamil Nadu - 641018',
   hero_heading: 'Find the Right Place for Your Future',

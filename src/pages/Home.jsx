@@ -167,7 +167,6 @@ export function Home() {
           properties={properties}
           loading={loading}
           error={error}
-          whatsappNumber={settings?.whatsapp_number}
         />
       </section>
 

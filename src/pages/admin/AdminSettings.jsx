@@ -13,7 +13,6 @@ export function AdminSettings() {
     company_name: '',
     logo_url: '',
     phone_number: '',
-    whatsapp_number: '',
     email: '',
     address: '',
     hero_heading: '',
@@ -67,7 +66,7 @@ export function AdminSettings() {
             Website Branding & Settings
           </h1>
           <p className="text-slate-400 text-xs sm:text-sm mt-1">
-            Update company details, phone numbers, WhatsApp, and homepage hero section copy.
+            Update company details, contact information, and homepage hero section copy.
           </p>
         </div>
 
@@ -127,20 +126,6 @@ export function AdminSettings() {
                 type="text"
                 name="phone_number"
                 value={settings.phone_number}
-                onChange={handleChange}
-                placeholder="+91 98765 43210"
-                className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-gold-500"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">
-                WhatsApp Number
-              </label>
-              <input
-                type="text"
-                name="whatsapp_number"
-                value={settings.whatsapp_number}
                 onChange={handleChange}
                 placeholder="+91 98765 43210"
                 className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-gold-500"

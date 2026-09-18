@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Phone, Mail, MapPin, MessageSquare, Facebook, Instagram, Youtube, Lock } from 'lucide-react';
+import { Building2, Phone, Mail, MapPin, Facebook, Instagram, Youtube, Lock } from 'lucide-react';
 import { settingsService } from '../../services/settingsService';
 import { propertyService } from '../../services/propertyService';
 
@@ -14,7 +14,6 @@ export function Footer() {
   }, []);
 
   const companyName = settings?.company_name || 'Apex Estates';
-  const whatsappUrl = `https://wa.me/${(settings?.whatsapp_number || '').replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello, I would like to inquire about your available properties.')}`;
 
   return (
     <footer className="bg-slate-950 border-t border-slate-800 text-slate-400 pt-16 pb-12">
@@ -53,9 +52,6 @@ export function Footer() {
                   <Youtube className="w-4 h-4" />
                 </a>
               )}
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all">
-                <MessageSquare className="w-4 h-4" />
-              </a>
             </div>
           </div>
 

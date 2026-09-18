@@ -38,7 +38,7 @@ export function FeedbackForm({ preselectedProperty = '', propertyId = null, onSu
       onSuccess?.();
     } catch (err) {
       console.error(err);
-      setErrorMsg('Failed to submit enquiry. Please try again or WhatsApp us directly.');
+      setErrorMsg('Failed to submit enquiry. Please try again or contact our sales office.');
     } finally {
       setLoading(false);
     }

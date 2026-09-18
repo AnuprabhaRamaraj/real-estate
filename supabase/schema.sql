@@ -55,7 +55,6 @@ CREATE TABLE IF NOT EXISTS public.site_settings (
     company_name TEXT DEFAULT 'Apex Estates',
     logo_url TEXT DEFAULT '',
     phone_number TEXT DEFAULT '+91 98765 43210',
-    whatsapp_number TEXT DEFAULT '+91 98765 43210',
     email TEXT DEFAULT 'contact@apexestates.com',
     address TEXT DEFAULT '123 Luxury Avenue, Race Course, Coimbatore, TN 641018',
     hero_heading TEXT DEFAULT 'Find the Right Place for Your Future',
